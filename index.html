@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>W4 練習 Chatbot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>🤖 練習用 Chatbot</h1>
+      <!-- 練習一：把標題改成你們組的名字 -->
+      <p class="subtitle">W4 Git Branch 練習</p>
+    </header>
+
+    <div id="chat-box">
+      <div class="message bot">
+        嗨！我是練習用的 Chatbot，今天我們要學 Git Branch 🌿
+      </div>
+    </div>
+
+    <div class="input-area">
+      <input id="user-input" type="text" placeholder="輸入訊息...">
+      <!-- 練習二：把按鈕文字改成你喜歡的文字 -->
+      <button onclick="sendMessage()">送出</button>
+    </div>
+  </div>
+
+  <script>
+    function sendMessage() {
+      const input = document.getElementById('user-input');
+      const chatBox = document.getElementById('chat-box');
+      const text = input.value.trim();
+
+      if (!text) return;
+
+      // 顯示使用者訊息
+      const userDiv = document.createElement('div');
+      userDiv.className = 'message user';
+      userDiv.textContent = text;
+      chatBox.appendChild(userDiv);
+
+      // 模擬 bot 回覆
+      const botDiv = document.createElement('div');
+      botDiv.className = 'message bot';
+      botDiv.textContent = `你說了「${text}」，我收到了！`;
+      chatBox.appendChild(botDiv);
+
+      input.value = '';
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    // 按 Enter 也能送出
+    document.getElementById('user-input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') sendMessage();
+    });
+  </script>
+
+</body>
+</html>
