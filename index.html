@@ -9,7 +9,10 @@
 
   <div class="container">
     <header>
-      <h1>🤖 練習用 Chatbot</h1>
+      <div class="header-top">
+        <h1>🤖 練習用 Chatbot</h1>
+        <button id="dark-mode-toggle" onclick="toggleDarkMode()" title="切換深色模式">🌙</button>
+      </div>
       <!-- 練習一：把標題改成你們組的名字 -->
       <p class="subtitle">W4 Git Branch 練習</p>
     </header>
@@ -55,6 +58,21 @@
     document.getElementById('user-input').addEventListener('keypress', function(e) {
       if (e.key === 'Enter') sendMessage();
     });
+
+    // 深色模式切換
+    function toggleDarkMode() {
+      const isDark = document.body.classList.toggle('dark-mode');
+      document.getElementById('dark-mode-toggle').textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+    }
+
+    // 頁面載入時恢復偏好設定
+    (function() {
+      if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+        document.getElementById('dark-mode-toggle').textContent = '☀️';
+      }
+    })();
   </script>
 
 </body>
