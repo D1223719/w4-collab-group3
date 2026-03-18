@@ -3,12 +3,16 @@
    學生練習：修改顏色、字體大小等
    ============================ */
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: 'Noto Sans TC', sans-serif;
   /* 練習：把背景色改成你喜歡的顏色 */
-  background-color: #f0f4f8;
+  background: url('background.jpg') center/cover fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,7 +22,7 @@ body {
 .container {
   background: white;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   width: 480px;
   max-width: 95vw;
   overflow: hidden;
@@ -31,8 +35,15 @@ header {
   padding: 20px 24px;
 }
 
-header h1 { font-size: 20px; }
-header .subtitle { font-size: 13px; opacity: 0.85; margin-top: 4px; }
+header h1 {
+  font-size: 20px;
+}
+
+header .subtitle {
+  font-size: 13px;
+  opacity: 0.85;
+  margin-top: 4px;
+}
 
 #chat-box {
   height: 360px;
