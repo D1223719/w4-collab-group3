@@ -34,6 +34,27 @@ header {
 header h1 { font-size: 24px; }
 header .subtitle { font-size: 15px; opacity: 0.85; margin-top: 4px; }
 
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#dark-mode-toggle {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.2s;
+  line-height: 1;
+}
+
+#dark-mode-toggle:hover {
+  background: rgba(255,255,255,0.35);
+}
+
 #chat-box {
   height: 360px;
   overflow-y: auto;
@@ -101,4 +122,59 @@ header .subtitle { font-size: 15px; opacity: 0.85; margin-top: 4px; }
 
 .input-area button:hover {
   opacity: 0.85;
+}
+
+/* ============================
+   深色模式 (Dark Mode)
+   基底顏色：黑色
+   ============================ */
+
+body.dark-mode {
+  background-color: #000000;
+}
+
+body.dark-mode .container {
+  background: #111111;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+body.dark-mode header {
+  background: #1a1a2e;
+}
+
+body.dark-mode #chat-box {
+  background: #111111;
+}
+
+body.dark-mode .message.bot {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}
+
+body.dark-mode .message.user {
+  background: #2a6049;
+  color: #f0f0f0;
+}
+
+body.dark-mode .input-area {
+  background: #111111;
+  border-top: 1px solid #2a2a2a;
+}
+
+body.dark-mode .input-area input {
+  background: #1e1e1e;
+  color: #e0e0e0;
+  border-color: #333333;
+}
+
+body.dark-mode .input-area input::placeholder {
+  color: #666666;
+}
+
+body.dark-mode .input-area input:focus {
+  border-color: #4f8ef7;
+}
+
+body.dark-mode .input-area button {
+  background: #1a4fa0;
 }
